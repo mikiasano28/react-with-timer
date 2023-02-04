@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
 
-function App() {
+
+const App = () => {
+  const [time, setTime] = useState(0);
+
+  // コンポーネントが生成されたときに一回だけ呼びたいときは、useEffectのcallback関数内で呼びたい処理を記述する。その際は第２引数に空の配列をつけるのを忘れないこと
+
+
+  // useEffect(() => {
+  //   console.log("useEffect is called");
+  //   window.setInterval(() => {
+  //     setTime(prev => ++prev);
+  //   }, 1000);
+  // }, []);   
+
+
+  //　空の配列を渡すことに良lってExampleコンポーネントが呼ばれた時のみsetInterval関数が実行される
+  // 空の配列　-> 依存してる関数がない
+
+
+  // useEffect(() => {
+  //   console.log("updated!");
+  // }, [time]);
+
+
+  // 依存配列に含めたstateを更新すると、このcallback関数が再度実行される
+
+  // window.setInterval(() => {
+  //   // setTime(prev => ++prev);
+  // }, 1000);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <h1>
+      <time>{time}</time>
+      <span> seconds</span>
+    </h1>
   );
+
 }
 
+
 export default App;
+
