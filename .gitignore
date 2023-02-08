@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+Practice.js
+Practice2.js
+Practice3.js
+PracticeApp.js
 
 # testing
 /coverage
